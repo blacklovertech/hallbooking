@@ -1,7 +1,7 @@
 
  <?php 
-include 'header.php';
-include 'sidebar.php';
+include './inc/header.php';
+include './inc/sidebar.php';
 include 'dashboard.php';
-include 'footer.php';
+include './inc/footer.php';
 ?>

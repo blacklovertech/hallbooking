@@ -2,12 +2,11 @@
     <section class="sidebar">
         <ul class="sidebar-menu">
             <li><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
-            <li><a href="listevent.php"><i class="fa fa-calendar"></i> Events</a></li>
         
         <li class="treeview  !!}">
           <a href="#">
-            <i class="fa fa-cogs"></i>
-            <span>Semester</span>
+            <i class="fa fa-building"></i>
+            <span>Halls</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -16,15 +15,9 @@
 
 
           
-         <li class=""><a href="https://student.kalasalingam.ac.in/semester/attendance"><i class="fa fa-circle-o"></i> <span>Attendance Details</span>
-            </a></li>
-
-
-
-        <li class=""><a href="https://student.kalasalingam.ac.in/semester/marks"><i class="fa fa-circle-o"></i> <span>Mark Details</span>
-            </a></li>
-      
-            <li class=""><a href="https://student.kalasalingam.ac.in/semester/registration"><i class="fa fa-circle-o"></i> <span>Registration</span>
+         <li class=""><a href="/halls_view"><i class="fa fa-building-o"></i> <span>Halls</span>
+            </a></li>      
+            <li class=""><a href="/hall_add"><i class="fa fa-plus"></i> <span>ADD HALL</span>
             </a></li>
          
           </ul>
