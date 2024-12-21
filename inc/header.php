@@ -18,7 +18,6 @@ $user_id = isset($_SESSION['user_id']) ? htmlspecialchars($_SESSION['user_id']) 
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/all.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/datatables.min.css">
   
 <!-- Include Font Awesome CSS -->
@@ -39,7 +38,7 @@ $user_id = isset($_SESSION['user_id']) ? htmlspecialchars($_SESSION['user_id']) 
     }
   </style>
 </head>
-<body class="skin-blue sidebar-mini pace-done" style="height: auto;">
+<body class="skin-blue sidebar" style="height: auto;">
   <div class="pace pace-inactive">
     <div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
       <div class="pace-progress-inner"></div>
@@ -96,5 +95,4 @@ $user_id = isset($_SESSION['user_id']) ? htmlspecialchars($_SESSION['user_id']) 
       </nav>
     </header>
   </div>
-</body>
-</html>
+

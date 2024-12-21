@@ -1,6 +1,7 @@
 <aside class="main-sidebar">
-    <section class="sidebar">
-        <ul class="sidebar-menu">
+  <section class="sidebar">
+    <ul class="sidebar-menu">
+
             <li><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
         
         <li class="treeview  !!}">
