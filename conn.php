@@ -1,27 +1,49 @@
 <?php
-// Database credentials
-$dbHost = "localhost"; 
-$dbUser = "your_db_user";
-$dbPass = "your_db_password";
-$dbName = "your_database_name";
+// Define a flag to switch between SQLite and MySQL
+// Set this to 'sqlite' for SQLite, or 'mysql' for MySQL
+$database_type = 'sqlite';  // Change this to 'mysql' for MySQL
 
-// Start session
-session_start();
+if ($database_type === 'sqlite') {
+    // SQLite database connection details
+    $sqlite_db = 'database.db';  // Path to your SQLite database file
 
-// Connect to the database
-$conn = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
+    try {
+        // Create SQLite connection
+        $conn = new PDO("sqlite:$sqlite_db");
+        
+        // Set error mode to exceptions
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch (PDOException $e) {
+        // Handle connection errors
+        echo "Connection failed: " . $e->getMessage();
+        exit();
+    }
 
-// Check connection
-if ($conn->connect_error) {
-    die("Database connection failed: " . $conn->connect_error);
-}
+    // You can now use $conn for your SQLite operations
 
-// Check if the user is logged in
-if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+} elseif ($database_type === 'mysql') {
+    // MySQL database connection details
+    $host = 'localhost';
+    $dbname = 'your_database_name';
+    $username = 'your_mysql_username';
+    $password = 'your_mysql_password';
+
+    try {
+        // Create MySQL connection using PDO
+        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+        
+        // Set error mode to exceptions
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch (PDOException $e) {
+        // Handle connection errors
+        echo "Connection failed: " . $e->getMessage();
+        exit();
+    }
+
+    // You can now use $conn for your MySQL operations
+
+} else {
+    echo "Invalid database type specified.";
     exit();
 }
-
-// Retrieve user information from session
-$userId = $_SESSION['user_id'];
 ?>
